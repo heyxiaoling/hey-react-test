@@ -94,7 +94,7 @@
 
 
 	// module
-	exports.push([module.id, "*{\n\tmargin:0;\n\tpadding:0;\n}\n\ndiv{\n\tcolor:#f00;\n\tborder: 1px solid yellow;\n}\n", ""]);
+	exports.push([module.id, "*{\n\tmargin:0;\n\tpadding:0;\n}\n\ndiv{\n\tcolor:#f00;\n\tborder: 1px solid yellow;\n}\n.a{\n\tbackground: #f00;\n}\n", ""]);
 
 	// exports
 

@@ -1,6 +1,6 @@
 module.exports = {
 	entry:{
-		index:'./res/js/index.js'
+		common:"./res/js/index.js"
 	},
 	output:{
 		path:'./build/',
