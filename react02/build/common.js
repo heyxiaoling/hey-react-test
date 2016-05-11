@@ -48,7 +48,7 @@
 
 	__webpack_require__(2);
 
-	document.body.innerHTML = "<div>"+str+"</div>";
+	document.body.innerHTML = "<div>"+str+"</div><h1>what</h1>";
 
 
 
@@ -56,7 +56,7 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	module.exports ="hello world "
+	module.exports = "hello world 123 456"
 
 
 /***/ },
@@ -69,7 +69,7 @@
 	var content = __webpack_require__(3);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -91,10 +91,10 @@
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
-
+	exports.i(__webpack_require__(5), "");
 
 	// module
-	exports.push([module.id, "*{\n\tmargin:0;\n\tpadding:0;\n}\n\ndiv{\n\tcolor:#f00;\n\tborder: 1px solid yellow;\n}\n.a{\n\tbackground: #f00;\n}\n", ""]);
+	exports.push([module.id, "div{\r\n\tcolor:#f00;\r\n\tborder: 1px solid yellow;\r\n}\r\n", ""]);
 
 	// exports
 
@@ -157,6 +157,20 @@
 
 /***/ },
 /* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(4)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "*{\r\n\tmargin:0;\r\n\tpadding:0;\r\n}\r\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

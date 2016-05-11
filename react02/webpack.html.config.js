@@ -30,6 +30,11 @@ module.exports = {
 			title:"欢迎",
 			filename: "index.html",
 			chunks:["common"]
+		}),
+		new htmlwebpackplugin({
+			title:"欢迎abc",
+			filename: "abc.html",
+			chunks:["abc"]
 		})
 	]
 }

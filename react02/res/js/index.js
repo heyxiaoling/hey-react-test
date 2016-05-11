@@ -1,6 +1,6 @@
-var str = require('./app.js');
+var str = require('./app');
 
-require('../css/index.css');
+require('../css/index');
 
-document.body.innerHTML = "<div>"+str+"</div>";
+document.body.innerHTML = "<div>"+str+"</div><h1>what</h1>";
 
