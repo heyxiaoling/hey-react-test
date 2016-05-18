@@ -44,148 +44,124 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react03\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react03\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react04\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react04\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
 	'use strict';
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(33);
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	__webpack_require__(168);
 
-	var _react = __webpack_require__(1);
+	var Message = React.createClass({
+		displayName: 'Message',
 
-	var _react2 = _interopRequireDefault(_react);
+		getInitialState: function getInitialState() {
+			console.log('getInitialState');
+			return {
+				count: 0,
+				message: 'ssssss'
+			};
+		},
+		getDefaultProps: function getDefaultProps() {
+			console.log('getDefaultProps');
+		},
+		// componentWillMount:function(){
+		// 	console.log('componentWillMount');
+		// 	var self = this;
 
-	var _reactDom = __webpack_require__(33);
+		// 	this.timer=setInterval(function(){
+		// 		self.setState({
+		// 			count: self.state.count + 1
+		// 		});
+		// 	},1000)
 
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _app = __webpack_require__(168);
-
-	var _app2 = _interopRequireDefault(_app);
-
-	var _item = __webpack_require__(170);
-
-	var _item2 = _interopRequireDefault(_item);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	__webpack_require__(171);
-	__webpack_require__(175);
-
-	var Main = function (_React$Component) {
-		_inherits(Main, _React$Component);
-
-		function Main() {
-			_classCallCheck(this, Main);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Main).apply(this, arguments));
-		}
-
-		_createClass(Main, [{
-			key: 'render',
-			value: function render() {
-				var dataArr = this.props.dataArr;
-				var content,
-				    footer,
-				    num = 0;
-
-				dataArr.reduce(function (n, item) {
-					num = item.compile ? num : num + 1;
-				}, 0);
-
-				if (dataArr.length !== 0) {
-					content = _react2.default.createElement(
-						'section',
-						{ className: 'main' },
-						_react2.default.createElement('input', { className: 'toggle-all', type: 'checkbox', checked: num === 0, onChange: this.toggleAll }),
-						_react2.default.createElement(
-							'ul',
-							{ className: 'todo-list' },
-							dataArr.map(function (item, index) {
-								return _react2.default.createElement(_item2.default, _extends({ key: index }, item, { toggle: _app2.default.toggle.bind(this, item.id) }));
-							}.bind(this))
-						)
-					);
-					footer = _react2.default.createElement(
-						'footer',
-						{ className: 'footer' },
-						_react2.default.createElement(
-							'span',
-							{ className: 'todo-count' },
-							_react2.default.createElement(
-								'strong',
-								null,
-								'0'
-							),
-							_react2.default.createElement(
-								'span',
-								null,
-								'条未选中'
-							)
-						)
-					);
-				}
-
-				return _react2.default.createElement(
-					'div',
+		// },
+		// componentDidMount:function(){
+		// 	console.log('componentDidMountDidMount');
+		// 	console.log( ReactDOM.findDOMNode(this) );
+		// },
+		// componentWillUnmount:function(){
+		// 	console.log('componentWillUnmount');
+		// 	clearInterval(this.timer);
+		// },
+		shouldComponentUpdate: function shouldComponentUpdate(nextProps, nextState) {
+			console.log('shouldComponentUpdate1');
+			if (nextState.count > 3) return false;
+			return true;
+		},
+		componentWillUpdate: function componentWillUpdate() {
+			console.log('componentWillUpdate ');
+		},
+		componentDidUpdate: function componentDidUpdate(nextProp, nextState) {
+			console.log('componentDidUpdate');
+		},
+		killMySelf: function killMySelf() {
+			ReactDOM.unmountComponentAtNode(div);
+		},
+		updateMySelf: function updateMySelf() {
+			this.setState({
+				count: this.state.count + 1
+			});
+		},
+		render: function render() {
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'h1',
 					null,
-					_react2.default.createElement(
-						'header',
-						{ className: 'header' },
-						_react2.default.createElement(
-							'h1',
-							null,
-							'todos'
-						),
-						_react2.default.createElement('input', {
-							onKeyDown: this.handleKeyDown,
-							className: 'new-todo',
-							placeholder: '请输入内容',
-							defaultValue: '' })
-					),
-					content,
-					footer
-				);
-			}
-		}, {
-			key: 'handleKeyDown',
-			value: function handleKeyDown(ev) {
-				if (ev.keyCode === 13) {
-					_app2.default.addItem(ev.target.value);
-					ev.target.value = "";
-				}
-			}
-		}, {
-			key: 'toggleAll',
-			value: function toggleAll(ev) {
-				_app2.default.toggleAll(ev.target.checked);
-			}
-		}]);
+					'计数：',
+					this.state.count
+				),
+				React.createElement(
+					'button',
+					{ onClick: this.killMySelf },
+					'删除组件'
+				),
+				React.createElement(
+					'button',
+					{ onClick: this.updateMySelf },
+					'手动更新下组件'
+				),
+				React.createElement(
+					'ul',
+					null,
+					React.createElement(MessageList, { count: "当前计数：" + this.state.count })
+				)
+			);
+		}
+	});
 
-		return Main;
-	}(_react2.default.Component);
+	var MessageList = React.createClass({
+		displayName: 'MessageList',
 
-	var section = document.createElement('section');
-	section.className = "todoapp";
+		componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+			console.log(nextProps);
+			console.log('componentWillReceiveProps');
+		},
+		shouldComponentUpdate: function shouldComponentUpdate(nextProps, nextState) {
+			console.log('shouldComponentUpdate2');
+			if (nextProps.count > 5) return false;
+			return true;
+		},
+		render: function render() {
+			return React.createElement(
+				'li',
+				null,
+				this.props.count
+			);
+		}
+	});
+	var div = document.createElement('div');
 
-	document.body.appendChild(section);
+	document.body.appendChild(div);
 
-	function render(dataArr) {
-		_reactDom2.default.render(_react2.default.createElement(Main, { dataArr: dataArr }), section);
-	}
+	ReactDOM.render(React.createElement(Message, null), div, function () {
+		console.log('渲染完成了');
+	});
 
-	render(_app2.default.dataArr);
-
-	_app2.default.render = render;
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react03\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react04\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "life.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 1 */
@@ -20282,229 +20258,20 @@
 /* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react03\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react03\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _util = __webpack_require__(169);
-
-	var app = {
-		dataArr: [],
-		info: function info() {
-			(0, _util.store)("todo", app.dataArr);
-		},
-		addItem: function addItem(value) {
-			app.dataArr.push({
-				id: Date.now(),
-				content: value,
-				compile: false
-			});
-			app.info();
-			app.render(app.dataArr);
-		},
-		toggleAll: function toggleAll(bl) {
-			app.dataArr.forEach(function (item) {
-				item.compile = bl;
-			});
-			app.info();
-			app.render(app.dataArr);
-		},
-		toggle: function toggle(id) {
-			app.dataArr.forEach(function (item) {
-				if (item.id === id) {
-					item.compile = !item.compile;
-				}
-			});
-			app.info();
-			app.render(app.dataArr);
-		},
-		delectItem: function delectItem(id) {
-			var newArr = app.dataArr.filter(function (item) {
-				return item.id !== id;
-			});
-
-			app.dataArr = newArr;
-			app.info();
-			app.render(app.dataArr);
-		}
-	};
-
-	app.dataArr = (0, _util.store)("todo") || [];
-
-	exports.default = app;
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react03\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "app.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 169 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react03\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react03\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-	var extend = function extend() {
-		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-			args[_key] = arguments[_key];
-		}
-
-		var newObj = {};
-		for (var i = 0; i < args.length; i++) {
-			var obj = args[i];
-			for (var key in obj) {
-				if (obj.hasOwnProperty(key)) {
-					newObj[key] = obj[key];
-				}
-			}
-		}
-		return newObj;
-	};
-
-	var store = function store(namespace, data) {
-		if (data) {
-			return localStorage.setItem(namespace, JSON.stringify(data));
-		}
-
-		var store = localStorage.getItem(namespace);
-		return store && JSON.parse(store) || [];
-	};
-
-	var hasOwn = {}.hasOwnProperty;
-	var classNames = function classNames() {
-		for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-			args[_key2] = arguments[_key2];
-		}
-
-		var classes = '';
-
-		for (var i = 0; i < args.length; i++) {
-			var arg = args[i];
-			if (!arg) continue;
-
-			var argType = typeof arg === 'undefined' ? 'undefined' : _typeof(arg);
-
-			if (argType === 'string' || argType === 'number') {
-				classes += ' ' + arg;
-			} else if (Array.isArray(arg)) {
-				classes += ' ' + classNames.apply(null, arg);
-			} else if (argType === 'object') {
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes += ' ' + key;
-					}
-				}
-			}
-		}
-
-		return classes.substr(1);
-	};
-
-	exports.extend = extend;
-	exports.store = store;
-	exports.classNames = classNames;
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react03\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "util.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 170 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react03\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react03\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _util = __webpack_require__(169);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Item = function (_React$Component) {
-	  _inherits(Item, _React$Component);
-
-	  function Item() {
-	    _classCallCheck(this, Item);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Item).apply(this, arguments));
-	  }
-
-	  _createClass(Item, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'li',
-	        { className: (0, _util.classNames)({
-	            completed: this.props.compile
-	          }) },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'view' },
-	          _react2.default.createElement('input', { className: 'toggle', type: 'checkbox', checked: this.props.compile, onChange: this.props.toggle }),
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            this.props.content
-	          ),
-	          _react2.default.createElement('button', { className: 'destroy', onClick: this.props.delectItem })
-	        ),
-	        _react2.default.createElement('input', { className: 'edit', defaultValue: '多多对对对' })
-	      );
-	    }
-	  }]);
-
-	  return Item;
-	}(_react2.default.Component);
-
-	exports.default = Item;
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\Administrator\\Desktop\\react-test\\hey-react-test\\react03\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "item.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 171 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(172);
+	var content = __webpack_require__(169);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(174)(content, {});
+	var update = __webpack_require__(172)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./base.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./base.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./index.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./index.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -20514,21 +20281,21 @@
 	}
 
 /***/ },
-/* 172 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(173)();
+	exports = module.exports = __webpack_require__(170)();
 	// imports
-
+	exports.i(__webpack_require__(171), "");
 
 	// module
-	exports.push([module.id, "hr {\r\n\tmargin: 20px 0;\r\n\tborder: 0;\r\n\tborder-top: 1px dashed #c5c5c5;\r\n\tborder-bottom: 1px dashed #f7f7f7;\r\n}\r\n\r\n.learn a {\r\n\tfont-weight: normal;\r\n\ttext-decoration: none;\r\n\tcolor: #b83f45;\r\n}\r\n\r\n.learn a:hover {\r\n\ttext-decoration: underline;\r\n\tcolor: #787e7e;\r\n}\r\n\r\n.learn h3,\r\n.learn h4,\r\n.learn h5 {\r\n\tmargin: 10px 0;\r\n\tfont-weight: 500;\r\n\tline-height: 1.2;\r\n\tcolor: #000;\r\n}\r\n\r\n.learn h3 {\r\n\tfont-size: 24px;\r\n}\r\n\r\n.learn h4 {\r\n\tfont-size: 18px;\r\n}\r\n\r\n.learn h5 {\r\n\tmargin-bottom: 0;\r\n\tfont-size: 14px;\r\n}\r\n\r\n.learn ul {\r\n\tpadding: 0;\r\n\tmargin: 0 0 30px 25px;\r\n}\r\n\r\n.learn li {\r\n\tline-height: 20px;\r\n}\r\n\r\n.learn p {\r\n\tfont-size: 15px;\r\n\tfont-weight: 300;\r\n\tline-height: 1.3;\r\n\tmargin-top: 0;\r\n\tmargin-bottom: 0;\r\n}\r\n\r\n#issue-count {\r\n\tdisplay: none;\r\n}\r\n\r\n.quote {\r\n\tborder: none;\r\n\tmargin: 20px 0 60px 0;\r\n}\r\n\r\n.quote p {\r\n\tfont-style: italic;\r\n}\r\n\r\n.quote p:before {\r\n\tcontent: '\\201C';\r\n\tfont-size: 50px;\r\n\topacity: .15;\r\n\tposition: absolute;\r\n\ttop: -20px;\r\n\tleft: 3px;\r\n}\r\n\r\n.quote p:after {\r\n\tcontent: '\\201D';\r\n\tfont-size: 50px;\r\n\topacity: .15;\r\n\tposition: absolute;\r\n\tbottom: -42px;\r\n\tright: 3px;\r\n}\r\n\r\n.quote footer {\r\n\tposition: absolute;\r\n\tbottom: -40px;\r\n\tright: 0;\r\n}\r\n\r\n.quote footer img {\r\n\tborder-radius: 3px;\r\n}\r\n\r\n.quote footer a {\r\n\tmargin-left: 5px;\r\n\tvertical-align: middle;\r\n}\r\n\r\n.speech-bubble {\r\n\tposition: relative;\r\n\tpadding: 10px;\r\n\tbackground: rgba(0, 0, 0, .04);\r\n\tborder-radius: 5px;\r\n}\r\n\r\n.speech-bubble:after {\r\n\tcontent: '';\r\n\tposition: absolute;\r\n\ttop: 100%;\r\n\tright: 30px;\r\n\tborder: 13px solid transparent;\r\n\tborder-top-color: rgba(0, 0, 0, .04);\r\n}\r\n\r\n.learn-bar > .learn {\r\n\tposition: absolute;\r\n\twidth: 272px;\r\n\ttop: 8px;\r\n\tleft: -300px;\r\n\tpadding: 10px;\r\n\tborder-radius: 5px;\r\n\tbackground-color: rgba(255, 255, 255, .6);\r\n\ttransition-property: left;\r\n\ttransition-duration: 500ms;\r\n}\r\n\r\n@media (min-width: 899px) {\r\n\t.learn-bar {\r\n\t\twidth: auto;\r\n\t\tpadding-left: 300px;\r\n\t}\r\n\r\n\t.learn-bar > .learn {\r\n\t\tleft: 8px;\r\n\t}\r\n}\r\n", ""]);
+	exports.push([module.id, "div{\r\n\tcolor:#f00;\r\n}\r\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 173 */
+/* 170 */
 /***/ function(module, exports) {
 
 	/*
@@ -20584,7 +20351,21 @@
 
 
 /***/ },
-/* 174 */
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(170)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "*{\r\n\tmargin:0;\r\n\tpadding:0;\r\n}\r\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -20833,46 +20614,6 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
-
-
-/***/ },
-/* 175 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(176);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(174)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./index.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./index.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 176 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(173)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "html,\r\nbody {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n}\r\n\r\nbutton {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tborder: 0;\r\n\tbackground: none;\r\n\tfont-size: 100%;\r\n\tvertical-align: baseline;\r\n\tfont-family: inherit;\r\n\tfont-weight: inherit;\r\n\tcolor: inherit;\r\n\t-webkit-appearance: none;\r\n\tappearance: none;\r\n\t-webkit-font-smoothing: antialiased;\r\n\t-moz-font-smoothing: antialiased;\r\n\tfont-smoothing: antialiased;\r\n}\r\n\r\nbody {\r\n\tfont: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n\tline-height: 1.4em;\r\n\tbackground: #f5f5f5;\r\n\tcolor: #4d4d4d;\r\n\tmin-width: 230px;\r\n\tmax-width: 550px;\r\n\tmargin: 0 auto;\r\n\t-webkit-font-smoothing: antialiased;\r\n\t-moz-font-smoothing: antialiased;\r\n\tfont-smoothing: antialiased;\r\n\tfont-weight: 300;\r\n}\r\n\r\nbutton,\r\ninput[type=\"checkbox\"] {\r\n\toutline: none;\r\n}\r\n\r\n.hidden {\r\n\tdisplay: none;\r\n}\r\n\r\n.todoapp {\r\n\tbackground: #fff;\r\n\tmargin: 130px 0 40px 0;\r\n\tposition: relative;\r\n\tbox-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),\r\n\t            0 25px 50px 0 rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.todoapp input::-webkit-input-placeholder {\r\n\tfont-style: italic;\r\n\tfont-weight: 300;\r\n\tcolor: #e6e6e6;\r\n}\r\n\r\n.todoapp input::-moz-placeholder {\r\n\tfont-style: italic;\r\n\tfont-weight: 300;\r\n\tcolor: #e6e6e6;\r\n}\r\n\r\n.todoapp input::input-placeholder {\r\n\tfont-style: italic;\r\n\tfont-weight: 300;\r\n\tcolor: #e6e6e6;\r\n}\r\n\r\n.todoapp h1 {\r\n\tposition: absolute;\r\n\ttop: -155px;\r\n\twidth: 100%;\r\n\tfont-size: 100px;\r\n\tfont-weight: 100;\r\n\ttext-align: center;\r\n\tcolor: rgba(175, 47, 47, 0.15);\r\n\t-webkit-text-rendering: optimizeLegibility;\r\n\t-moz-text-rendering: optimizeLegibility;\r\n\ttext-rendering: optimizeLegibility;\r\n}\r\n\r\n.new-todo,\r\n.edit {\r\n\tposition: relative;\r\n\tmargin: 0;\r\n\twidth: 100%;\r\n\tfont-size: 24px;\r\n\tfont-family: inherit;\r\n\tfont-weight: inherit;\r\n\tline-height: 1.4em;\r\n\tborder: 0;\r\n\toutline: none;\r\n\tcolor: inherit;\r\n\tpadding: 6px;\r\n\tborder: 1px solid #999;\r\n\tbox-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);\r\n\tbox-sizing: border-box;\r\n\t-webkit-font-smoothing: antialiased;\r\n\t-moz-font-smoothing: antialiased;\r\n\tfont-smoothing: antialiased;\r\n}\r\n\r\n.new-todo {\r\n\tpadding: 16px 16px 16px 60px;\r\n\tborder: none;\r\n\tbackground: rgba(0, 0, 0, 0.003);\r\n\tbox-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);\r\n}\r\n\r\n.main {\r\n\tposition: relative;\r\n\tz-index: 2;\r\n\tborder-top: 1px solid #e6e6e6;\r\n}\r\n\r\nlabel[for='toggle-all'] {\r\n\tdisplay: none;\r\n}\r\n\r\n.toggle-all {\r\n\tposition: absolute;\r\n\ttop: -55px;\r\n\tleft: -12px;\r\n\twidth: 60px;\r\n\theight: 34px;\r\n\ttext-align: center;\r\n\tborder: none; /* Mobile Safari */\r\n}\r\n\r\n.toggle-all:before {\r\n\tcontent: '\\276F';\r\n\tfont-size: 22px;\r\n\tcolor: #e6e6e6;\r\n\tpadding: 10px 27px 10px 27px;\r\n}\r\n\r\n.toggle-all:checked:before {\r\n\tcolor: #737373;\r\n}\r\n\r\n.todo-list {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tlist-style: none;\r\n}\r\n\r\n.todo-list li {\r\n\tposition: relative;\r\n\tfont-size: 24px;\r\n\tborder-bottom: 1px solid #ededed;\r\n}\r\n\r\n.todo-list li:last-child {\r\n\tborder-bottom: none;\r\n}\r\n\r\n.todo-list li.editing {\r\n\tborder-bottom: none;\r\n\tpadding: 0;\r\n}\r\n\r\n.todo-list li.editing .edit {\r\n\tdisplay: block;\r\n\twidth: 506px;\r\n\tpadding: 13px 17px 12px 17px;\r\n\tmargin: 0 0 0 43px;\r\n}\r\n\r\n.todo-list li.editing .view {\r\n\tdisplay: none;\r\n}\r\n\r\n.todo-list li .toggle {\r\n\ttext-align: center;\r\n\twidth: 40px;\r\n\t/* auto, since non-WebKit browsers doesn't support input styling */\r\n\theight: auto;\r\n\tposition: absolute;\r\n\ttop: 0;\r\n\tbottom: 0;\r\n\tmargin: auto 0;\r\n\tborder: none; /* Mobile Safari */\r\n\t-webkit-appearance: none;\r\n\tappearance: none;\r\n}\r\n\r\n.todo-list li .toggle:after {\r\n\tcontent: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewBox=\"-10 -18 100 135\"><circle cx=\"50\" cy=\"50\" r=\"50\" fill=\"none\" stroke=\"#ededed\" stroke-width=\"3\"/></svg>');\r\n}\r\n\r\n.todo-list li .toggle:checked:after {\r\n\tcontent: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewBox=\"-10 -18 100 135\"><circle cx=\"50\" cy=\"50\" r=\"50\" fill=\"none\" stroke=\"#bddad5\" stroke-width=\"3\"/><path fill=\"#5dc2af\" d=\"M72 25L42 71 27 56l-4 4 20 20 34-52z\"/></svg>');\r\n}\r\n\r\n.todo-list li label {\r\n\twhite-space: pre-line;\r\n\tword-break: break-all;\r\n\tpadding: 15px 60px 15px 15px;\r\n\tmargin-left: 45px;\r\n\tdisplay: block;\r\n\tline-height: 1.2;\r\n\ttransition: color 0.4s;\r\n}\r\n\r\n.todo-list li.completed label {\r\n\tcolor: #d9d9d9;\r\n\ttext-decoration: line-through;\r\n}\r\n\r\n.todo-list li .destroy {\r\n\tdisplay: none;\r\n\tposition: absolute;\r\n\ttop: 0;\r\n\tright: 10px;\r\n\tbottom: 0;\r\n\twidth: 40px;\r\n\theight: 40px;\r\n\tmargin: auto 0;\r\n\tfont-size: 30px;\r\n\tcolor: #cc9a9a;\r\n\tmargin-bottom: 11px;\r\n\ttransition: color 0.2s ease-out;\r\n}\r\n\r\n.todo-list li .destroy:hover {\r\n\tcolor: #af5b5e;\r\n}\r\n\r\n.todo-list li .destroy:after {\r\n\tcontent: '\\D7';\r\n}\r\n\r\n.todo-list li:hover .destroy {\r\n\tdisplay: block;\r\n}\r\n\r\n.todo-list li .edit {\r\n\tdisplay: none;\r\n}\r\n\r\n.todo-list li.editing:last-child {\r\n\tmargin-bottom: -1px;\r\n}\r\n\r\n.footer {\r\n\tcolor: #777;\r\n\tpadding: 10px 15px;\r\n\theight: 20px;\r\n\ttext-align: center;\r\n\tborder-top: 1px solid #e6e6e6;\r\n}\r\n\r\n.footer:before {\r\n\tcontent: '';\r\n\tposition: absolute;\r\n\tright: 0;\r\n\tbottom: 0;\r\n\tleft: 0;\r\n\theight: 50px;\r\n\toverflow: hidden;\r\n\tbox-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),\r\n\t            0 8px 0 -3px #f6f6f6,\r\n\t            0 9px 1px -3px rgba(0, 0, 0, 0.2),\r\n\t            0 16px 0 -6px #f6f6f6,\r\n\t            0 17px 2px -6px rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n.todo-count {\r\n\tfloat: left;\r\n\ttext-align: left;\r\n}\r\n\r\n.todo-count strong {\r\n\tfont-weight: 300;\r\n}\r\n\r\n.filters {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tlist-style: none;\r\n\tposition: absolute;\r\n\tright: 0;\r\n\tleft: 0;\r\n}\r\n\r\n.filters li {\r\n\tdisplay: inline;\r\n}\r\n\r\n.filters li a {\r\n\tcolor: inherit;\r\n\tmargin: 3px;\r\n\tpadding: 3px 7px;\r\n\ttext-decoration: none;\r\n\tborder: 1px solid transparent;\r\n\tborder-radius: 3px;\r\n}\r\n\r\n.filters li a.selected,\r\n.filters li a:hover {\r\n\tborder-color: rgba(175, 47, 47, 0.1);\r\n}\r\n\r\n.filters li a.selected {\r\n\tborder-color: rgba(175, 47, 47, 0.2);\r\n}\r\n\r\n.clear-completed,\r\nhtml .clear-completed:active {\r\n\tfloat: right;\r\n\tposition: relative;\r\n\tline-height: 20px;\r\n\ttext-decoration: none;\r\n\tcursor: pointer;\r\n\tposition: relative;\r\n}\r\n\r\n.clear-completed:hover {\r\n\ttext-decoration: underline;\r\n}\r\n\r\n.info {\r\n\tmargin: 65px auto 0;\r\n\tcolor: #bfbfbf;\r\n\tfont-size: 10px;\r\n\ttext-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);\r\n\ttext-align: center;\r\n}\r\n\r\n.info p {\r\n\tline-height: 1;\r\n}\r\n\r\n.info a {\r\n\tcolor: inherit;\r\n\ttext-decoration: none;\r\n\tfont-weight: 400;\r\n}\r\n\r\n.info a:hover {\r\n\ttext-decoration: underline;\r\n}\r\n\r\n/*\r\n\tHack to remove background from Mobile Safari.\r\n\tCan't use it globally since it destroys checkboxes in Firefox\r\n*/\r\n@media screen and (-webkit-min-device-pixel-ratio:0) {\r\n\t.toggle-all,\r\n\t.todo-list li .toggle {\r\n\t\tbackground: none;\r\n\t}\r\n\r\n\t.todo-list li .toggle {\r\n\t\theight: 40px;\r\n\t}\r\n\r\n\t.toggle-all {\r\n\t\t-webkit-transform: rotate(90deg);\r\n\t\ttransform: rotate(90deg);\r\n\t\t-webkit-appearance: none;\r\n\t\tappearance: none;\r\n\t}\r\n}\r\n\r\n@media (max-width: 430px) {\r\n\t.footer {\r\n\t\theight: 50px;\r\n\t}\r\n\r\n\t.filters {\r\n\t\tbottom: 10px;\r\n\t}\r\n}\r\n", ""]);
-
-	// exports
 
 
 /***/ }

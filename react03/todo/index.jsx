@@ -17,15 +17,15 @@ class Main extends React.Component{
 
 		if(dataArr.length !== 0){
 			content = <section className="main">
-			                <input className="toggle-all" type="checkbox" checked={num === 0} onChange={this.toggleAll} />
-			                <ul className="todo-list">
-			                    {
-			                    	dataArr.map(function(item,index){
-			                    		return <Item key={index} {...item} toggle={app.toggle.bind(this,item.id)} />
-			                    	}.bind(this))
-			                    }
-			                </ul>
-			            </section>;
+		                <input className="toggle-all" type="checkbox" checked={num === 0} onChange={this.toggleAll} />
+		                <ul className="todo-list">
+		                    {
+		                    	dataArr.map(function(item,index){
+		                    		return <Item key={index} {...item} toggle={app.toggle.bind(this,item.id)} />
+		                    	}.bind(this))
+		                    }
+		                </ul>
+		            </section>;
             footer = <footer className="footer">
 			            <span className="todo-count">
 			            	<strong>0</strong>
