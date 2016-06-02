@@ -1,0 +1,21 @@
+{
+  "name": "heyxiaoling",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "hey"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/heyxiaoling/hey-react-test",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

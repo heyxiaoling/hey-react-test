@@ -1,0 +1,21 @@
+{
+  "name": "heyxiaoling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hey",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^4.0.0",
+    "gulp-react": "^3.1.0",
+    "lodash": "^4.12.0",
+    "react": "^15.0.2",
+    "reactify": "^1.1.1"
+  }
+}
