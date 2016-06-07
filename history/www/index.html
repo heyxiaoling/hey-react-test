@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>History</h1>
+	<br/>
+	<br/>
+	<br/>
+	<a href="#/user">user</a>
+	<script type="text/javascript" src="./lib/jquery.min.js"></script>
+	<script type="text/javascript">
+		// 参考自 http://modernizr.com/download/#-history 源码
+		var isHistoryApi = !!(window.history && history.pushState);
+
+		// ...
+
+		if(isHistoryApi){
+			console.log(window.location);
+
+			//newURL = "?page=" + pageNow;
+			//history.pushState(null, "", newURL);
+
+
+		    $(window).on("popstate", function(event) {
+
+			    // 取得之前通过pushState保存的state object，尽管本示例并不打算使用它。
+			    // jQuery对event做了一层包装，需要通过originalEvent取得原生event。
+			    var state = event.originalEvent.state,
+
+			        // 本示例直接取URL参数来处理
+			        reg = /page=(\d+)/,
+			        regMatch = reg.exec(location.search),
+
+			        // 第1页的时候既可以是 ?page=1，也可以根本没有page参数
+			        pageNow = regMatch === null ? 1 : +regMatch[1];
+			        console.log(state);
+
+			    updateByPage(pageNow);
+			});
+
+			function updateByPage(num){
+				
+
+			}
+		}
+
+		
+	</script>
+</body>
+</html>
