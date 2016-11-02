@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        
+
+        function inheritPrototype(subType,superType){
+            // var object = function(o){
+            //     function F(){}
+            //     F.prototype = o;
+            //     return new F();
+            // }
+            // var prototype = object(superType.prototype);
+            var prototype = Object.create(superType.prototype);
+            prototype.constructor = subType;
+            subType.prototype = prototype;
+        }
+
+        function Person(name){
+            this.name = name;
+        }
+
+        Person.prototype.sayName = function(){
+            console.log(this.name);
+            alert(this.name);
+        }
+
+        function Student(name,age){
+            Person.call(this,name);
+            this.age = age;
+        }
+
+
+        inheritPrototype(Student,Person);
+
+        Student.prototype.sayAge = function(){
+            console.log(this.age);
+            alert(this.age);
+        }
+
+        var s = new Student('hey',24);
+        console.log(s);
+        s.sayName();
+        s.sayAge();
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
